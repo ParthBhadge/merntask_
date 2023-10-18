@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date and Time Display</title>
+</head>
+<body>
+  <h2>Date and Time Display</h2>
+  
+  <button onclick="showDate()">Show Date</button>
+  <p id="date"></p>
+  
+  <button onclick="showTime()">Show Time</button>
+  <p id="time"></p>
+  
+  <script>
+    function showDate() {
+      // Get the current date
+      const currentDate = new Date();
+
+      // Format the date as "7/March/2023"
+      const dateFormatted = currentDate.getDate() + '/' + 
+                           monthName(currentDate.getMonth()) + '/' + 
+                           currentDate.getFullYear();
+
+      // Display the formatted date
+      document.getElementById('date').textContent = 'Date: ' + dateFormatted;
+    }
+
+    function showTime() {
+      // Get the current date
+      const currentDate = new Date();
+
+      // Format the time as "Tue Mar 07 2023 23:24:26 GMT+0530 (India Standard Time)"
+      const timeFormatted = currentDate.toString();
+
+      // Display the formatted time
+      document.getElementById('time').textContent = 'Time: ' + timeFormatted;
+    }
+
+    // Function to get the name of the month from its numeric value
+    function monthName(month) {
+      const months = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+      return months[month];
+    }
+  </script>
+</body>
+</html>

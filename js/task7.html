@@ -1,0 +1,47 @@
+
+<html>
+  <head>
+    <script type="text/javascript">
+      var img = null;
+      var animationInterval;
+      var isAnimating = false;
+
+      function init() {
+        img = document.getElementById('myimg');
+        img.style.position = 'relative';
+        img.style.left = '50px';
+      }
+
+      function moveRight() {
+        img.style.left = parseInt(img.style.left) + 100 + 'px';
+      }
+
+      function startAnimation() {
+        if (!isAnimating) {
+          animationInterval = setInterval(moveRight, 100);
+          isAnimating = true;
+        }
+      }
+
+      function stopAnimation() {
+        if (isAnimating) {
+          clearInterval(animationInterval);
+          isAnimating = false;
+        }
+      }
+
+      window.onload = init;
+    </script>
+  </head>
+
+  <body>
+    <form>
+      <img id="myimg" src="train1.png" />
+      <center>
+        <p>Click the following buttons to handle animation</p>
+        <input type="button" value="Start" onclick="startAnimation();" />
+        <input type="button" value="Stop " onclick="stopAnimation();" />
+      </center>
+    </form>
+  </body>
+</html>

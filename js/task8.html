@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+       
+        body {
+            
+            font-family: Arial, sans-serif;
+            color: rgb(16, 16, 16);
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center vertically */
+            height: 100vh;
+            margin: auto;
+        }
+       
+
+        #registrationForm {
+            background-color: #FEE140;
+            background-image: linear-gradient(180deg, #FEE140 0%, #ed3f76 100%);
+            border: 2px solid #0074d9; /* Add a border around the form */
+            border-radius: 10px; /* Set border-radius to create rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px; /* Adjust the max-width to control box sizing */
+            width: 100%;
+            text-align: center; /* Center-align the content within the form */
+            margin: 1 auto;
+        }
+        
+        h1 {
+            margin-top: 0;
+            color: blue /* Remove top margin from h1 to center it within the form */
+        }
+
+        label {
+            font-weight: bold;
+        }
+        button {
+    background: #fd0606;
+    color: white; /* Set the text color to white */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 0 10px 10px; /* Match the border-radius to create a square effect */
+    cursor: pointer;
+}
+
+button:hover {
+    background: #fd0606;
+}
+p{
+    text-align: left;
+}
+
+    </style>
+</head>
+<body>
+    
+    
+    <form id="registrationForm" action="process_registration.php" method="post" onsubmit="return validateForm()">
+        <h1>Registration Form</h1>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" style = "width: 190px;>
+        <span class="error" id="first_name_error"></span>
+
+        <br><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name"style = "width: 190px;>
+        <span class="error" id="last_name_error"></span>
+
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" style = "width: 222px;>
+        <span class="error" id="email_error"></span>
+
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"style = "width: 190px;>
+        <span class="error" id="password_error"></span>
+
+        <br><br>
+
+        <label for="password_confirm">Re-enter Password:</label>
+        <input type="password" id="password_confirm" name="password_confirm" style = "width: 108px;>
+        <span class="error" id="password_confirm_error"></span>
+
+        <br><br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="male"> Male
+        <input type="radio" id="female" name="gender" value="female"> Female
+        <input type="radio" id="other" name="gender" value="other"> Other
+        <span class="error" id="gender_error"></span>
+
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"style = "width: 200px;>
+        <span class="error" id="age_error"></span>
+
+        <br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone"style = "width: 125px;>
+        <span class="error" id="phone_error"></span>
+
+        <br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+        <span class="error" id="address_error"></span>
+
+        <br><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state"style = "width: 218px;>
+        <span class="error" id="state_error"></span>
+
+        <br><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" style = "width: 218px;>
+            <option value="">Choose your country</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <!-- Add more countries here -->
+        </select>
+        <span class="error" id="country_error"></span>
+
+        <br><br>
+
+        <label for="languages">Languages known:</label>
+        <input type="checkbox" id="english" name="languages[]" value="English"> English
+        <input type="checkbox" id="kannada" name="languages[]" value="Kannada"> Kannada
+        <input type="checkbox" id="hindi" name="languages[]" value="Hindi"> Hindi
+        <input type="checkbox" id="telugu" name="languages[]" value="Telugu">Telugu
+        <span class="error" id="languages_error"></span>
+
+        <br><br>
+
+        <label for="declaration"></label>
+        <input type="checkbox" id="declaration" name="declaration" required>Hereby I declare all the given details are me
+        <span class="error" id="declaration_error"></span>
+
+        <br><br>
+        
+        <p style="text-align: right;">Log in to <a href="https://www.ethnus.com">Ethnus</a> website</p>
+
+
+        <br>
+
+        <button type="submit">Register</button>
+    </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            // You can add your validation logic here
+            // Return true if the form is valid, or false if there are validation errors
+            return true; // For now, return true to allow form submission
+        }
+    </script>
+</body>
+</html>

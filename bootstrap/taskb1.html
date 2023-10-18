@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnus Layout</title>
+    <style>
+        body {
+            background-color: blue;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #00ddff;
+            color: white;
+        }
+
+        nav {
+            background-color: grey;
+            color: #ffff;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        li {
+            padding: 10px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            height: calc(100vh - 80px); /* 80px for header and nav combined */
+            text-align: center;
+        }
+
+        .left-side {
+            flex: 80;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .right-side {
+            flex: 20;
+            background-color: #333;
+            padding: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Ethnus Layout</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>Menu</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li style="margin-left: auto;">SIGN UP</li>
+            <li>LOGIN</li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="left-side">
+            <p>Write your content here</p>
+        </div>
+        <div class="right-side">
+            <p>This is</p>
+        </div>
+    </div>
+</body>
+</html>
